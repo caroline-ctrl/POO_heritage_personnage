@@ -6,11 +6,9 @@ class Personnage{
 
     /**********CONSTRUCT******/
 
-    public function __construct($nom, $force, $sante)
+    public function __construct(array $arr)
     {
-        $this->setNom($nom);
-        $this->setForce($force);
-        $this->setSante($sante);
+        $this->hydratation($arr);
     }
 
     /*********GETTER*********/
@@ -71,17 +69,29 @@ class Personnage{
 /**********SPECIFIC METHODS*********/
 
     public function seDeplacer(Personnage $personnage){// on a besoin de l'objet Personnage pour utiliser la methode seDeplacer. Equivalent de $personnage = new Personnage. $personnage correspond a $test qui initialise l'objet
-        echo 'je suis ' . $personnage->getNom() . ' et je me deplace';
+        echo '<br/>je suis ' . $personnage->getNom() . ' et je me deplace<br/>';
     }
 
     public function parler(Personnage $personnage){
-        echo 'Je suis ' . $personnage->getNom() . ' et je sais parler';
+        echo '</br>Je suis ' . $personnage->getNom() . ' et je sais parler<br/>';
+    }
+
+
+
+    /***********HYDRATATION*********/
+    public function hydratation(array $attributes){
+        foreach($attributes as $key => $value){
+            $method = "set".ucfirst($key);
+            if(method_exists($this, $method)){
+                $this->$method($value);
+            }
+        }
     }
 }
 
-// $test = new Personnage("michel", 2, 100);
-// echo ($test->getNom());
-// echo ($test->getForme());
-// echo ($test->getSante());
-// $test->seDeplacer($test);
-// $test->parler($test);
+$test = new Personnage(["nom" => "michel", "force" => 2, "sante" => 100]);
+echo ($test->getNom());
+echo ($test->getForme());
+echo ($test->getSante());
+$test->seDeplacer($test);
+$test->parler($test);

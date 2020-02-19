@@ -70,11 +70,18 @@ class Personnage{
 
 /**********SPECIFIC METHODS*********/
 
-    public function seDeplacer(){}
-    public function parler(){}
+    public function seDeplacer(Personnage $personnage){// on a besoin de l'objet Personnage pour utiliser la methode seDeplacer. Equivalent de $personnage = new Personnage. $personnage correspond a $test qui initialise l'objet
+        echo 'je suis ' . $personnage->getNom() . ' et je me deplace';
+    }
+
+    public function parler(Personnage $personnage){
+        echo 'Je suis ' . $personnage->getNom() . ' et je sais parler';
+    }
 }
 
 $test = new Personnage("michel", 2, 100);
 echo ($test->getNom());
 echo ($test->getForme());
 echo ($test->getSante());
+$test->seDeplacer($test);
+$test->parler($test);

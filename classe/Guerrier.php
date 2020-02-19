@@ -39,14 +39,14 @@ class Guerrier extends Personnage{
 
     /**********SPECIFIC METHODS********/
     public function seBattre(Guerrier $guerrier){
-        echo 'je suis ' . $guerrier->getNom() . ' et je sais me battre';
+        echo 'je suis un ' . $guerrier->getNom() . ' et je sais me battre';
     }
 }
 
-// $test = new Guerrier("hulk", 1000, 2000, "beaucoup");
-// var_dump($test);
-// echo $test->getNom();
-// echo $test->getForme();
-// echo $test->getSante();
-// echo $test->getMuscle();
-// $test->seBattre($test);
+$test = new Guerrier("hulk", 1000, 2000, "beaucoup");
+var_dump($test);
+echo $test->getNom();
+echo $test->getForme();
+echo $test->getSante();
+echo $test->getMuscle();
+$test->seBattre($test);

@@ -2,7 +2,7 @@
 class Personnage{
     private $nom;
     private $force;
-    private $santé;
+    private $sante;
 
     /*********GETTER*********/
 
@@ -10,13 +10,32 @@ class Personnage{
      * return $nom
      * type: string
      */
-    public function getName(){
-        return $this->name;
+    public function getNom(){
+        return $this->nom;
     }
 
     /**
      * return $force
-     * typ
+     * type: integer
+     */
+    public function getForme(){
+        return $this->force;
+    }
+
+    /**
+     * return $sante
+     * type: integer
+     */
+    public function getSante(){
+        return $this->sante;
+    }
+
+
+
+    /*********SETTER**********/
+
+    /**
+     * set value
      */
 
     public function seDeplacer(){}

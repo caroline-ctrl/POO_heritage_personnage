@@ -73,3 +73,8 @@ class Personnage{
     public function seDeplacer(){}
     public function parler(){}
 }
+
+$test = new Personnage("michel", 2, 100);
+echo ($test->getNom());
+echo ($test->getForme());
+echo ($test->getSante());

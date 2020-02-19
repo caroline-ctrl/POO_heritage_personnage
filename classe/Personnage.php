@@ -35,9 +35,33 @@ class Personnage{
     /*********SETTER**********/
 
     /**
-     * set value
+     * set value $nom
+     * type: string
      */
+    public function setNom($nom){
+        $this->nom = $nom;
+    }
 
+    /**
+     * set value $force
+     * type: integer
+     */
+    public function setForce($force){
+        $this->force = $force;
+    }
+
+    /**
+     * set value $sante
+     * type: integer
+     */
+    public function setSante($sante){
+        $this->sante = $sante;
+    }
+
+
+
+
+    
     public function seDeplacer(){}
     public function parler(){}
 }

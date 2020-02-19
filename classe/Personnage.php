@@ -79,9 +79,9 @@ class Personnage{
     }
 }
 
-$test = new Personnage("michel", 2, 100);
-echo ($test->getNom());
-echo ($test->getForme());
-echo ($test->getSante());
-$test->seDeplacer($test);
-$test->parler($test);
+// $test = new Personnage("michel", 2, 100);
+// echo ($test->getNom());
+// echo ($test->getForme());
+// echo ($test->getSante());
+// $test->seDeplacer($test);
+// $test->parler($test);
